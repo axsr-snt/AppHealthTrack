@@ -1,0 +1,360 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300;500&display=swap');
+
+:root {
+    --logo: 'Audiowide';
+    --text-font: 'Roboto';
+}
+
+*
+{
+   margin: 0;
+   padding: 0; 
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto';
+    text-align: center;
+
+}
+
+h3, h4, h5 {
+    padding: 15px;
+    color: darkblue;
+}
+
+#background {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/haltere-tenis-toalha-rosa-entre-as-bolas-coloridas-no-azul-3d-rendem_179321-85.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-viewport {
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#container-box1 {
+    width: 335px;
+    height: 512px;
+    border-radius: 15px;
+    border: 1px solid #AFEEEE;
+    box-sizing: border-box;
+    background-color: #635e9b81;
+}
+
+#logo-section {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+}
+
+#logo-section img {
+ width: 94.92px;
+ height: 90.07px;
+ margin: 39px 0;
+ margin-left: 10px;
+}
+
+#logo-section h1 {
+    display: inline;
+    font-family: var(--logo);
+    color: #F4FEFF;
+    text-shadow: 1px 1px #006BCD;
+   }
+
+a {
+    text-decoration: none;
+}
+
+#account-section {
+    display: grid;
+    margin: 0 auto;
+    bottom: 0;
+}
+
+.text-input {
+    width: 279.19px;
+    height: 40.6px;
+    box-sizing: border-box;
+    margin: 15px auto;
+    border-radius: 50px;
+    border: 1px solid #AFEEEE;
+    padding: 0 15px;
+    color: #006BCD;
+}
+
+.login-screen-button {
+    margin: 10px auto; 
+}
+
+.button-input:hover {
+    cursor: pointer;
+    color: violet;
+    border: solid violet;
+}
+
+.button-input {
+    width: 111.66px;
+    height: 28.42px;
+    box-sizing: border-box;
+    border-radius: 45px;
+    border: 3px solid;
+}
+
+.ok {
+    border-color: #06FDD0;
+    background-color: #008B72;
+    color: #06FDD0;
+    text-align: center;
+}
+
+.cadastro {
+    border-color: #EEE0AF;
+    background-color: #CD7B00;
+    color: #EEE0AF;
+    text-align: center;
+}
+
+#singup-section {
+    display: grid;
+    margin: 0 auto;
+    bottom: 0;
+}
+
+.button-section {
+    display: grid;
+}
+
+.a-button-input-ok {
+    grid-column-start: 2;
+    margin: 0 auto;
+}
+
+.a-button-input-cancel {
+    grid-column-start: 1;
+    margin: 0 auto;
+}
+
+.cancel {
+    border-color: #EEE0AF;
+    background-color: #CD7B00;
+    color: #EEE0AF;
+    text-align: center;
+}
+
+
+/* profile */
+
+.header {
+    width: 100%;
+    height: 50px;
+    top: 0;
+    position: absolute;
+    display: grid;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e9ddbb;
+    align-content: space-between;
+    background-color: #ebc150f8;
+
+}
+
+.logo-section-header {
+    height: 50px;
+    grid-column-start: 1
+    
+}
+
+.logo-section-header img {
+    width: 40px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.header-menu {
+    height: 50px;
+    grid-column-start: 6
+}
+
+.header-menu ul {
+    right: 0;
+    height: 49px;
+    box-sizing: border-box;
+
+}
+
+.header-menu ul li ul {
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    width: 40%;
+    border-top: 1px solid #e9ddbb;
+    box-sizing: border-box;
+    padding-top: 40px;
+    background-color: #ebc150f8;
+    display: none;
+}
+
+.header-menu ul li:hover ul {
+    display: block;
+}
+
+li {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 45px;
+    font-family: 'Roboto';
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    color: darkblue;
+}
+
+.header-menu-desk {
+    display: none;
+}
+
+.container-profile {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 60px;
+    display: grid;
+    border-radius: 15px;
+    border: 1px solid #AFEEEE;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #635e9b81;
+}
+
+.perfil-container {
+    margin: 10px auto 0;
+    height: 150px;
+}
+
+.perfil-container img {
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid #AFEEEE;
+}
+
+.meta {
+    width: 90%;
+    height: 70px;
+    margin: 15px auto;
+    border-radius: 15px;
+    display: flex;
+    border: 1px solid #AFEEEE;
+    box-sizing: border-box;
+    background-color: #635e9be8;
+}
+
+.meta {
+    align-items: center;
+}
+
+.meta img {
+    width: 40px;
+    margin-left: 15px;
+}
+
+@media (min-width: 475.2px)
+{
+    #container-box1 {
+        width: 432px;
+        height: 645.67px;
+        border-radius: 15px;
+        border: 1px solid #AFEEEE;
+        box-sizing: border-box;
+        background-color: #635e9b81;
+    }
+
+    .container-profile {
+        max-width: 800px;
+    }
+    .text-input {
+        width: 360px;
+        height: 51.2px;
+        box-sizing: border-box;
+        border-radius: 50px;
+        border: 1px solid #AFEEEE;
+        padding: 0 15px;
+        color: #006BCD;
+        font-size: 24px;
+    }
+
+    #logo-section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        }
+        
+    #logo-section img {
+        width: 94.92px;
+        height: 90.07px;
+        margin: 39px 0;
+        margin-left: 10px;
+        }
+        
+    #logo-section h1 {
+        display: inline;
+        font-size: 2em;
+        font-family: var(--logo);
+        color: #F4FEFF;
+        text-shadow: 1px 1px #006BCD;
+        }
+
+    .button-input {
+        width: 144px;
+        height: 35.84px;
+        box-sizing: border-box;
+        border-radius: 45px;
+        border: 3px solid;
+    }
+    
+    .ok {
+        border-color: #06FDD0;
+        background-color: #008B72;
+        color: #06FDD0;
+        text-align: center;
+    }
+    
+    .cancel {
+        border-color: #EEE0AF;
+        background-color: #CD7B00;
+        color: #EEE0AF;
+        text-align: center;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .header-menu-desk {
+        display: block;
+        grid-column-start: 2;
+    }
+
+    .header-menu-desk ul {
+        right: 0;
+        height: 49px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row-reverse;
+        
+    }
+
+    .header-menu-desk ul a {
+        width: 70px;
+
+        list-style-type: none;
+
+    }
+}
