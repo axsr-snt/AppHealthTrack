@@ -7,8 +7,10 @@ public class Teste {
 	
 		
 		Scanner leitor = new Scanner(System.in);
-		//Usuario user = new Usuario();
-		//Perfil profile = new Perfil();
+		Usuario user = new Usuario();
+		Perfil profile = new Perfil();
+		PerfilAlimentacao PA = new PerfilAlimentacao();
+		PerfilAtividadeFisica PAF = new PerfilAtividadeFisica();  
 		String string;
 		float varFloat;
 		
@@ -50,6 +52,32 @@ public class Teste {
 		*/
 		
 		// CLASSE PERFIL ATIVIDADE FISICA
+		
+		/*
+		System.out.println("Digite a atividade fisica que fará parte do seu perfil: ");
+		string =leitor.nextLine();
+		PAF.setAtividadeFisca(string);
+		
+		System.out.println("Digite o tempo de duração para a atividade: " + PAF.getAtividadeFisca());
+		varFloat = leitor.nextFloat();
+		PAF.setParametro(varFloat);
+		
+		System.out.println("Você deve realizar a atividade " + PAF.getAtividadeFisca() + " por " + PAF.getParametro() + " minutos");
+		*/
+		
+		// CLASSE PERFIL ALIMENTACAO
+		
+		/*
+		System.out.println("Digite o nutriente para formar seu perfil de alimentação: ");
+		string = leitor.nextLine();
+		PA.setItemConsumir(string);
+		
+		System.out.println("Digite a quantidade do item " + PA.getItemConsumir() + " que deverá ser consumida");
+		varFloat = leitor.nextFloat();
+		PA.setParametro(varFloat);
+		
+		System.out.println("Você deve consumir " + PA.getParametro() + " gramas do item " + PA.getItemConsumir());
+		*/
 		
 	}
 }

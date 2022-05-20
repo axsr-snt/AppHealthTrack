@@ -1,7 +1,7 @@
 package br.app.fiap.healthtrack.usuario;
 
 /**
- * Classe que abstrai um usuário
+ * Classe que abstrai o usuário
  * @author salex
  * @version 1.0
  */

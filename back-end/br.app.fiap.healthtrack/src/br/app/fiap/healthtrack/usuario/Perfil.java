@@ -1,5 +1,11 @@
 package br.app.fiap.healthtrack.usuario;
 
+/**
+ * Classe abstrai o perfil básico do usuário
+ * @author salex
+ * @version 1.0
+ */
+
 public class Perfil {
 	
 	/**
