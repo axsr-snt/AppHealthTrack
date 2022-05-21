@@ -11,13 +11,9 @@
 
 CREATE TABLE t_sht_conta (
     cdg_conta  NUMBER(7) NOT NULL,
-    eml_conta  NUMBER(40) NOT NULL,
+    eml_conta  VARCHAR2(40) NOT NULL,
     snh_conta  VARCHAR2(16) NOT NULL
 );
-
-ALTER TABLE t_sht_conta ADD CONSTRAINT conta_pk PRIMARY KEY ( cdg_conta );
-
-ALTER TABLE t_sht_conta ADD CONSTRAINT conta_eml_conta_un UNIQUE ( eml_conta );
 
 CREATE TABLE t_sht_meta (
     cdg_item            NUMBER(3) NOT NULL,
@@ -27,8 +23,6 @@ CREATE TABLE t_sht_meta (
     dsc_unidade_medida  VARCHAR2(15) NOT NULL
 );
 
-ALTER TABLE t_sht_meta ADD CONSTRAINT meta_pk PRIMARY KEY ( cdg_item );
-
 CREATE TABLE t_sht_meta_usuario (
     cdg_usuario           NUMBER(7) NOT NULL,
     cdg_item              NUMBER(3) NOT NULL,
@@ -37,18 +31,16 @@ CREATE TABLE t_sht_meta_usuario (
     dta_termino_prevista  DATE
 );
 
-ALTER TABLE t_sht_meta_usuario ADD CONSTRAINT t_sht_meta_usuario_pk PRIMARY KEY ( cdg_usuario,
-                                                                                  cdg_item );
+
 
 CREATE TABLE t_sht_registro_meta (
     cdg_registro_meta  NUMBER(9) NOT NULL,
     cdg_usuario        NUMBER(7) NOT NULL,
     cdg_item           NUMBER(3) NOT NULL,
-    vlr_realizado      NUMBER(3, 2) NOT NULL,
+    vlr_realizado      NUMBER(5, 2) NOT NULL,
     dta_realizacao     DATE NOT NULL
 );
 
-ALTER TABLE t_sht_registro_meta ADD CONSTRAINT registro_meta_pk PRIMARY KEY ( cdg_registro_meta );
 
 CREATE TABLE t_sht_usuario (
     cdg_usuario           NUMBER(7) NOT NULL,
@@ -60,12 +52,35 @@ CREATE TABLE t_sht_usuario (
     vlr_pressao_arterial  VARCHAR2(5) NOT NULL
 );
 
+
+
+-- PRIMARY KEY
+
+ALTER TABLE t_sht_usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( cdg_usuario );
+
+ALTER TABLE t_sht_conta ADD CONSTRAINT conta_pk PRIMARY KEY ( cdg_conta );
+
+ALTER TABLE t_sht_meta_usuario ADD CONSTRAINT t_sht_meta_usuario_pk PRIMARY KEY ( cdg_usuario,
+                                                                                  cdg_item );
+
+ALTER TABLE t_sht_meta ADD CONSTRAINT meta_pk PRIMARY KEY ( cdg_item );
+
+ALTER TABLE t_sht_registro_meta ADD CONSTRAINT registro_meta_pk PRIMARY KEY ( cdg_registro_meta );
+
+
+-- UNIQUE
+
 CREATE UNIQUE INDEX usuario__idx ON
     t_sht_usuario (
         cdg_conta
     ASC );
 
-ALTER TABLE t_sht_usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( cdg_usuario );
+
+ALTER TABLE t_sht_conta ADD CONSTRAINT conta_eml_conta_un UNIQUE ( eml_conta );
+
+
+
+-- FOREIGN KEY
 
 ALTER TABLE t_sht_meta_usuario
     ADD CONSTRAINT "META_USUARIO-META_FK" FOREIGN KEY ( cdg_item )
@@ -83,4 +98,34 @@ ALTER TABLE t_sht_registro_meta
 
 ALTER TABLE t_sht_usuario
     ADD CONSTRAINT "USUARIO-CONTA_FK" FOREIGN KEY ( cdg_conta )
-        REFERENCES t_sht_conta ( cdg_conta );
+        REFERENCES t_sht_conta ( cdg_conta );~
+
+-- SEQUENCIAS
+
+CREATE SEQUENCE cdg_conta
+    START WITH 1
+    INCREMENT BY 1
+    MAXVALUE 9999999
+    NOCACHE
+    ORDER;
+
+CREATE SEQUENCE cdg_usuario
+    START WITH 1
+    INCREMENT BY 1
+    MAXVALUE 9999999
+    NOCACHE
+    ORDER;
+
+CREATE SEQUENCE cdg_item
+    START WITH 1
+    INCREMENT BY 1
+    MAXVALUE 999
+    NOCACHE
+    ORDER;
+
+CREATE SEQUENCE cdg_registro_meta
+    START WITH 1
+    INCREMENT BY 1
+    MAXVALUE 999999999
+    NOCACHE
+    ORDER;
